@@ -4,8 +4,11 @@
 // Non-alphabetical characters should remain unchanged (except for spaces).
 
 function spaceJam(s) {
+  const regex = /[\s]+/g;
   console.log(s);
-  const split = s.split('');
+  const trimmed = s.trim();
+  const filtered = trimmed.replace(regex, '');
+  const split = filtered.split('');
   const resultArr = [];
   console.log(split);
   split.forEach((x) => {
@@ -16,3 +19,5 @@ function spaceJam(s) {
   console.log(resultStr);
   return resultStr;
 }
+
+spaceJam('   free   Code   Camp   '); // "F  R  E  E  C  O  D  E  C  A  M  P"
